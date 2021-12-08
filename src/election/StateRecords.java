@@ -9,13 +9,12 @@ import java.util.Observer;
 public class StateRecords extends Observable{
 	
 	private ArrayList <Observer> observers;
-	protected ArrayList <State> states;
+	private ArrayList <State> states;
 	
 	public StateRecords(ArrayList<State> states) {
 		observers = new ArrayList<Observer>();
 		this.states = states;
 	}
-	
 	
 	public void setVotes(ArrayList<State> states) {
 		this.states = states;
@@ -24,7 +23,8 @@ public class StateRecords extends Observable{
 	
 	public void votesChanged() {
 		setChanged();
-		notifyObservers(states);	
+		notifyObservers(states);
+		
 	}
 
 }

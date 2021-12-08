@@ -6,11 +6,11 @@ import java.util.Observer;
 
 public class VoteReport implements Observer  {
 
-	IPopular iPopular;
-	IElectoral iElectoral;
+	private IPopular iPopular;
+	private IElectoral iElectoral;
 	private String electoralReport;
 	private String popularReport;
-	ArrayList<State> states;
+	private ArrayList<State> states;
 
 	public VoteReport(IPopular iPopular, IElectoral iElectoral, ArrayList<State> states, StateRecords observable) {
 		this.iPopular = iPopular;
@@ -20,7 +20,7 @@ public class VoteReport implements Observer  {
 		this.states = states;
 		observable.addObserver(this);
 	}
-		
+
 	public void setElectoralReport() {
 		this.electoralReport = iElectoral.reportElectoral();
 	}
@@ -45,7 +45,4 @@ public class VoteReport implements Observer  {
 		display();
 
 	}
-
-
-
 }
